@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font:'pacifico',cursive;
+}
+body{
+    background-image: url('Images/home-page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    /* height: 100vh; */
+    width: 100%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    user-select: none;    
+}
+.main-header{
+    text-align: center;    
+    transform: 1s;
+}
+.main-header:hover{
+    -webkit-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+}
+.main-header h1{
+    font-size: 3rem;
+    font-family: var(--main-font);
+    color: blue;
+    margin: 20px;
+}
+.main-header h3{
+    font-size: 1.5rem;    
+    margin: 20px;
+    color: palevioletred;
+}
+.main-header hr{
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    border: none;
+    background-color: yellow;
+    color: black;
+}
+.butt{
+    color: white !important;
+    background : blue !important;
+}
+.main-header input{
+    width: 90%;
+    padding: 1rem;
+    margin: 20px;
+    border: none;
+    border-bottom: 2px solid gray;
+    /* font-size: 1.3rem; */
+    background: transparent;
+    outline: none;
+}
+.main-header textarea{
+    width: 90%;
+    padding: 1rem;
+    margin: 20px;
+    border: none;
+    border-bottom: 2px solid gray;
+    /* font-size: 1.3rem; */
+    background: transparent;
+    outline: none;
+}
+.main-header input:hover{
+    border: 1px solid yellow;
+}
+.main-header input:focus{
+    border: 1px solid yellow;
+}
+.main-header button{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    background: blue;
+    color: papayawhip;
+    width: 250px;
+    border: none;
+    /* border-radius: 50px; */
+    cursor: pointer;
+    /* transition: 1s;*/
+} 
+/* .main-header button:hover{
+    transform: scale(2,1);
+} */
+.main-header a{
+    font-size: 20px;
+    color:blue ;
+    text-decoration: none;
+}
+
+.selectbox{
+    padding: 8px 12px;
+    border: 1px solid black;
+}
