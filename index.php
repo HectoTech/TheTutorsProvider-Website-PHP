@@ -252,23 +252,16 @@ session_start();
       <?php
          include('Includes/connection.php');       
          global $conn;    
-         $query5 = "SELECT * FROM tutorreg order by Likes Desc limit 3";          
+         $query5 = "SELECT * FROM tutorreg limit 3";          
          $run_query5 = mysqli_query($conn , $query5) or die("Error: " . mysqli_error($conn));
          while($rd5 = mysqli_fetch_array($run_query5))
          {          
           $tid =  $rd5["Tid"];                       
           $Name = $rd5["TName"];        
           $Address = $rd5["TAddress"];
-          $Contact = $rd5["TContact"];
-          $PassRec = $rd5["PassRec"];
-          $Cnic = $rd5["TCnic"];
+          $Contact = $rd5["TContact"];                    
           $Photo = $rd5["TPhoto"];
-          $Cv = $rd5["TCV"];
-          $Demo = $rd5["TDemo"];
-          $Mode = $rd5["Mode"];
-          $Sub = $rd5["Subjects"];
-          $Loc = $rd5["Location"];
-          $City = $rd5["City"];
+         
 
           if($roles == "Student"){                                             
             echo"        
