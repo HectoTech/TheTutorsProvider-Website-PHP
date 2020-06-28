@@ -261,7 +261,7 @@ session_start();
           $Address = $rd5["TAddress"];
           $Contact = $rd5["TContact"];                    
           $Photo = $rd5["TPhoto"];
-         
+          $std_id_meet = 0;
 
           if($roles == "Student"){                                             
             echo"        
@@ -272,12 +272,11 @@ session_start();
               <h5 class='card-title'>$Name</h5>            
             </div>
             <div class='card-footer'>                                     
-            <a href='Details.php?tid=$tid' class='btn btn-info'>Details</a><br /><br />          
-            <a href='' class='btn btn-success'>Request a Meeting</a><br /><br />
-            </div>
-          </div>  
-                ";
-          }
+            <a href='Details.php?tid=$tid' class='btn btn-info'>Details</a><br /><br />           
+            <a href='RequestMeetup.php?tid=$tid' class='btn btn-success'>Request a Meeting</a><br /><br />
+          </div>
+          </div> ";
+          }          
           else if($roles == "Tutor"){
             echo"                   
             <div class='card'>            
@@ -304,13 +303,14 @@ session_start();
             </div>
             <div class='card-footer'>                                
             <a href='Details.php?tid=$tid' class='btn btn-info'>Details</a><br /><br />
-            <a href='' class='btn btn-success'>Request a Meeting</a><br /><br />
+            <a href='RequestMeetup.php?tid=$tid' class='btn btn-success'>Request a Meeting</a><br /><br />
             </div>
           </div>          
 
         ";
           }
          }        
+        
       ?>       
       </div>
       <a href="" class="btn btn-primary centered">See More</a>    
