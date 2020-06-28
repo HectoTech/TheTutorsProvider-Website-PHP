@@ -39,7 +39,7 @@ label{
   }
     </style>
 </head>
-<body>
+<body style="display: flex;justify-content: center;align-items: center; background-image: url('Images/home-page.png');  background-repeat: no-repeat;   background-size: cover;">
 <?php
 
 if(isset($_GET["tid"]))
@@ -55,8 +55,15 @@ if(isset($_GET["tid"]))
             $Mode = $rd5["Mode"];            
             $City = $rd5["City"];            
             $Name = $rd5["TName"];                                
-            $Photo = $rd5["TPhoto"];          
+            $Photo = $rd5["TPhoto"];     
+            $Address = $rd5["TAddress"];
+            $Contact = $rd5["TContact"];     
         }             
+        if($Contact == "" && $Address == "" && $Cv == ""){
+            echo "<script>alert('Profile of '+'$Name' + ' is not Completed..please wait..!')</script> ";
+            echo"  <script>window.location.href = 'index.php'</script>";
+        }
+        else{
         echo "
             
             <div class='container' style='margin-top:100px ;'>
@@ -81,6 +88,7 @@ if(isset($_GET["tid"]))
             </div>
             </div>
         ";
+        }
     }
 
 ?>
