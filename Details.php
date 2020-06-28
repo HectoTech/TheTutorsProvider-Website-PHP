@@ -49,15 +49,18 @@ if(isset($_GET["tid"]))
         $query4 = "SELECT * FROM tutorreg where Tid = '$Tutor_id' ";          
         $run_query4 = mysqli_query($conn , $query4);
         while($rd5 = mysqli_fetch_array($run_query4))
-        {                                       
-            $Cv = $rd5["TCV"];
+        {                                                   
             $Demo = $rd5["TDemo"];
             $Mode = $rd5["Mode"];            
             $City = $rd5["City"];            
             $Name = $rd5["TName"];                                
             $Photo = $rd5["TPhoto"];     
             $Address = $rd5["TAddress"];
-            $Contact = $rd5["TContact"];     
+            $Contact = $rd5["TContact"];  
+            $experience = $rd5["Experience"];  
+            $University = $rd5["University"];  
+            $Subject = $rd5["Subjects"];     
+            $Att_stat = $rd5["Attract_Statement"];  
         }             
         if($Contact == "" && $Address == "" && $Cv == ""){
             echo "<script>alert('Profile of '+'$Name' + ' is not Completed..please wait..!')</script> ";
@@ -77,13 +80,18 @@ if(isset($_GET["tid"]))
                     <h1 class='text-center'>$Name</h1>
                     <label>Mode of Teaching</label>
                     <p class='card-text text-info'>$Mode</p>
+                    <label>Subjects Offered</label>
+                    <p class='card-text text-info'>$Subject</p>
                     <label>City of Teaching</label>
                     <p class='card-text text-info'>$City</p>
                     <label>Download Demo Video Lecture</label><br />
-                    <a href='DownloadDemo.php?tdemo=$Demo'>Download Lecture Link</a><br /><br />
-                    <label>Download Resume of Teacher</label><br />
-                    <a href='DownloadCv.php?tcv=$Cv'>Download Resume Link</a>                
-                    
+                    <a href='DownloadDemo.php?tdemo=$Demo'>Download Lecture Link</a><br /><br />                                   
+                    <label>Years Of Experience</label>
+                    <p class='card-text text-info'>$experience</p>
+                    <label>University</label>
+                    <p class='card-text text-info'>$University</p>
+                    <label>Success Statement</label>
+                    <p class='card-text text-info'>$Att_stat</p>                    
                 </div>                
             </div>
             </div>

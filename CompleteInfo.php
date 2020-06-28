@@ -129,6 +129,9 @@ session_start();
                 <label for="img2">Click me to upload Professional Picture</label>
                 <input type="file" name="Cv" id="img3"  style="display:none;" required/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  />
                 <label for="img3">Click me to upload Professional Resume</label>        
+                <input type="text" name="exp" placeholder="Years Of Experience in Teaching" />
+                <input type="text" name="uni" placeholder="Your Past or present University" />
+                <textarea name="att" cols="60" rows="5" placeholder="Write Attractive statement and Intro for students 2 to lines maximum" required></textarea>
                 <textarea name="Address" cols="60" rows="5" placeholder="Permanent Address" required></textarea>
                 <input type="submit" class="btn btn-primary butt" name="comp" id="" value="Submit Information">
             </form>        
@@ -143,6 +146,9 @@ session_start();
                 {           
                     $com->Tid = $rd["Tid"];        
                 }                       
+                $com->experience = $_POST['exp'];
+                $com->Attract_statement = $_POST['att'];
+                $com->university = $_POST['uni'];
                 $com->Taddress = $_POST['Address'];
                 $com->Tcontact = $_POST['contact'];
                 $com->Tpassrec = $_POST['PassRec'];                

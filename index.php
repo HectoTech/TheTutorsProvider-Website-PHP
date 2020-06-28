@@ -252,7 +252,7 @@ session_start();
       <?php
          include('Includes/connection.php');       
          global $conn;    
-         $query5 = "SELECT * FROM tutorreg limit 3";          
+         $query5 = "SELECT * FROM tutorreg limit 1,4";          
          $run_query5 = mysqli_query($conn , $query5) or die("Error: " . mysqli_error($conn));
          while($rd5 = mysqli_fetch_array($run_query5))
          {          
