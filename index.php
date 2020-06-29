@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include('Classes/Slider.php');
+include('Classes/AnnouncementClass.php');
 ?>
 <html lang="en">
 <head>
@@ -17,8 +19,9 @@ session_start();
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
     <title>The Tutors Provider</title>
-    <link rel="stylesheet" href="style/Home.css">
-    <style>
+    <link rel="stylesheet" href="style/Home.css?v=<?php echo time(); ?>">
+    <!-- <link rel="stylesheet" type="text/css" href="style/Home.css"> -->
+    <!-- <style>
       @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         *{
             margin: 0;
@@ -32,7 +35,7 @@ session_start();
       .heading{
         font-size: 3rem;
         font-family: var(--main-font);
-        color: blue;
+        color: purple;
         margin: 20px;
     }
     html{
@@ -83,7 +86,7 @@ session_start();
   flex-direction : row;
   justify-content : space-between;
 }
-    </style>
+    </style> -->
 </head>
 <body style=" background-image: url('Images/home-page.png');  background-repeat: no-repeat;   background-size: cover;">
     <nav class="navbar">
@@ -128,10 +131,12 @@ session_start();
                 }
           }
           elseif($roles == "Student"){
+            
             include('Includes/connection.php');  
             $email1 =  $_SESSION["Std"] ; 
             $query3 = "SELECT * FROM studentreg where SEmail = '$email1' ";          
             $run_query3 = mysqli_query($conn , $query3);
+            $std_id = 0;
             while($rd1 = mysqli_fetch_array($run_query3))
             {                         
                 $std_id = $rd1["Sid"];
@@ -141,8 +146,11 @@ session_start();
             if($SAddress == "" && $SContact == ""){
               echo"<a href='CompleteInfo.php' class='btn btn-warning'>Complete your information</a>";                    
                 }
+                echo"<a href='Chat.php?sid=$std_id' class='chat'><i class='fal fa-comment'></i></a>";
               }           
+              
           ?>
+          
             <li class="nav-item active">              
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>            
@@ -175,36 +183,20 @@ session_start();
             </li>            
           </ul>
         </div>
-      </nav>
+      </nav>      
       <a href="" class="upbtn"><i class="fas fa-arrow-up"></i></a>
+      
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="Images/Slider/slide1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Ecat Preparation Starting</h5>
-              <p>Get your seats book now</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Images/Slider/slide2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Ecat Preparation Starting</h5>
-              <p>Get your seats book now</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Images/Slider/slide3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Ecat Preparation Starting</h5>
-              <p>Get your seats book now</p>
-            </div>
-          </div>
+        </ol>        
+        <div class="carousel-inner">          
+        <?php
+        $slide = new Slider();
+        $slide->RecoverSlider($slide);
+        ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -313,40 +305,18 @@ session_start();
         
       ?>       
       </div>
-      <a href="" class="btn btn-primary centered">See More</a>    
+      <a href="Tutors.php" class="btn btn-primary centered">See More</a>    
       <div id="news">
       <nav class="navbar">
-        <p><center class="heading">Latest News</center></p>
+        <p><center class="heading">Latest Announcement and Study Plans</center></p>
       </nav>
       <div class="card-deck">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">A MOMENT OF CLARITY</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Data shows that the closure of businesses and transport has lowered air pollution in cities like Lahore and Karachi. How can we keep this momentum going when the lockdowns are eased?</p>
-          <a href="#" class="card-link">News link</a>          
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">A MOMENT OF CLARITY</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Data shows that the closure of businesses and transport has lowered air pollution in cities like Lahore and Karachi. How can we keep this momentum going when the lockdowns are eased?
-          </p>
-          <a href="#" class="card-link">News link</a>          
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">A MOMENT OF CLARITY</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Data shows that the closure of businesses and transport has lowered air pollution in cities like Lahore and Karachi. How can we keep this momentum going when the lockdowns are eased?
-          </p>
-          <a href="#" class="card-link">News Link</a>          
-        </div>
-      </div>
+      <?php
+         $Announcements = new Announcement();
+         $Announcements->RecoverAnnouncement($Announcements);
+      ?>
     </div>
-    <a href="" class="btn btn-primary centered">See More</a>    
+    <a href="Announcement.php" class="btn btn-primary centered">See More</a>    
     </div>
     <div id="result">
     <nav class="navbar">

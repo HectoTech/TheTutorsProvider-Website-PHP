@@ -25,7 +25,7 @@ class Login{
         else if($o_Email == $l->Email && $o_Pass == $l->Password && $o_role == "Student")
         {
         $_SESSION["Std"] = $l->Email;        
-        $_SESSION["role"] = "Student";
+        $_SESSION["role"] = $o_role;
         echo "<script>alert('Welcome Student')</script> ";
         echo"  <script>window.location.href = 'index.php'</script>";  
         }

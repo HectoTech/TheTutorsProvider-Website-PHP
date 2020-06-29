@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="Style.css">    
+    <link rel="stylesheet" href="style/Styles.css">    
     <title>About-CEO</title>    
     <style>
         .img-wrap{
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <h1 class="text-center">Muhammad Faraz Ansar</h1>
+                    <h1 class="text-center heading">Muhammad Faraz Ansar</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem doloribus sunt, necessitatibus soluta nesciunt numquam error optio! Minima animi dolore voluptas! Nisi soluta autem cupiditate minima, nemo accusantium esse repellat Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, corrupti! Sequi molestias facere vitae iste architecto facilis dignissimos, cumque adipisci recusandae eligendi distinctio blanditiis dicta voluptate rem veritatis consequuntur mollitia.</p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem provident cumque distinctio vero beatae quos quo voluptates est quas ipsam tenetur, magni, ullam ipsa non, quasi perspiciatis in accusamus obcaecati?Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic debitis perspiciatis atque quidem itaque ad aliquam, ut deleniti adipisci ipsa, aut ea a sapiente ex aliquid fuga laudantium provident animi!</p>
                 </div>                

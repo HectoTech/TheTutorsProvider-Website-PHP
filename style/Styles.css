@@ -1,0 +1,80 @@
+/* .maincard{
+    display: flex;
+    
+    justify-content: space-around;
+} */
+.card:hover{
+    -webkit-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+}
+.coll:hover{
+    -webkit-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
+}
+body{
+    background-image: url('Images/home-page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.coll{
+    align-items: center;
+    text-align: center;
+    width: 375px;
+    margin: 20px;
+    height: auto;
+    box-shadow: 5px 10px #D3D3D3	;
+    justify-content: space-around;    
+}
+.card-deck{    
+    margin-left: 40px;
+    margin-right: 40px;    
+    margin-top: 10px;     
+}
+.card-img-top{
+    height: 220px;
+}
+.abc{
+    display: flex;
+    justify-content: space-around;
+}
+.counter-text{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+    color: purple;
+}
+.counter{
+    font-size: 26px;
+    font-weight: bolder;
+    color: red;
+}
+.heading{
+    /* margin-left: 40%; */
+    font-size: 30px;
+    color: purple;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+.d-block{
+    width: auto;
+    height: 500px;
+}
+.body {
+    margin: 0;
+    padding: 0;
+  }
+.img-wrap{
+    width: 100%;
+}
+.img-wrap img{
+    width: 200px;
+}
+@media only screen and (max-width: 575px) {
+    img-wrap {
+      margin-left : 100px;
+    }
+  }
