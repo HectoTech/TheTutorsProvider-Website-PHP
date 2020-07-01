@@ -20,73 +20,7 @@ include('Classes/AnnouncementClass.php');
         crossorigin="anonymous"></script>
     <title>The Tutors Provider</title>
     <link rel="stylesheet" href="style/Home.css?v=<?php echo time(); ?>">
-    <!-- <link rel="stylesheet" type="text/css" href="style/Home.css"> -->
-    <!-- <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-      :root{
-          --main-font:'pacifico',cursive;
-      }
-      .heading{
-        font-size: 3rem;
-        font-family: var(--main-font);
-        color: purple;
-        margin: 20px;
-    }
-    html{
-    scroll-behavior: smooth;
-}
-    .upbtn{
-    background: blue;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 40px;
-    right: 50px;
-    z-index: 99;
-    text-decoration: none;
-    text-align:center;
-    color: white;
-    clear: both;
-    font-size: 22px;
-    
-    line-height: 50px;
-}
-.centered{
-  margin-top : 5%;
-    margin-left : 45%;
-}
-.carousel-item{
-    height: 20%;
-} 
-.carousel-item img{
-    height: 20%;
-}
-.img-responsive {
-           height:100%;
-           width:100%;
-        }
-.card-image-top {
-  width: 200px;
-  height: 100px
-}
-.image-container
-{
-  width:250px;
-  height:140px;
-}
-.main{
-  width : 18rem;
-  display : flex;
-  flex-direction : row;
-  justify-content : space-between;
-}
-    </style> -->
+    <!-- <link rel="stylesheet" type="text/css" href="style/Home.css"> -->   
 </head>
 <body style=" background-image: url('Images/home-page.png');  background-repeat: no-repeat;   background-size: cover;">
     <nav class="navbar">

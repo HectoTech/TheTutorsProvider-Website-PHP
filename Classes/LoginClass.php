@@ -20,7 +20,7 @@ class Login{
         {
         $_SESSION["Admin"] = $l->Email;
         echo "<script>alert('Welcome Admin')</script> ";
-        // echo"  <script>window.location.href = 'AdminHome.php'</script>";  
+        echo"  <script>window.location.href = 'AdminHome.php'</script>";  
         }
         else if($o_Email == $l->Email && $o_Pass == $l->Password && $o_role == "Student")
         {
