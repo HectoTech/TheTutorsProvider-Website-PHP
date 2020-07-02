@@ -66,16 +66,21 @@ body{
             <br />
             <?php
             $Student_id = 0;
+            if(isset($_GET["sid"]))
+            {                
+                $_SESSION['mychatid'] = $_GET["sid"];
+            }
             if(isset($_POST['ChatSendAdmin'])){
                 if(isset($_GET["sid"]))
-                {
-                    $Student_id = $_GET["sid"];     
+                {                    
+                    $Student_id = $_GET["sid"];                  
                     $chat = new Chat();
                     $chat->Message =  $_POST['AdmChat']; 
                     $now = new DateTime();
                     $chat->Time = $now->format('Y-m-d H:i:s');
                     $chat->Sid =  $Student_id;
                     $chat->InsertAdminChat($chat);
+                    
                 }
             }
             ?>            
@@ -83,7 +88,7 @@ body{
         <script type="text/javascript">
                 $(document).ready(function(){                   
                     setInterval(function(){
-                        $('#chat').load('GetAdminChat.php?sid=<?php echo $Student_id ?>')
+                        $('#chat').load('GetAdminChat.php')
                     }, 0);                    
                 });                            
             </script>        
