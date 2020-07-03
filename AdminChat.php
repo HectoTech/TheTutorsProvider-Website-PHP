@@ -58,6 +58,7 @@ body{
             <hr/>
             <h3>Welcome to The Tutor's Provider Student Fascilitation Center</h3>
             <div id="chat"></div>
+            <div id="chat2"></div>
             <form action="" method="post" enctype="multipart/form-data">       
             
             <textarea name="AdmChat" cols="30" rows="10" placeholder="Type your message Here..!" required></textarea>
@@ -89,6 +90,13 @@ body{
                 $(document).ready(function(){                   
                     setInterval(function(){
                         $('#chat').load('GetAdminChat.php')
+                    }, 0);                    
+                });                            
+            </script>        
+        <script type="text/javascript">
+                $(document).ready(function(){                   
+                    setInterval(function(){
+                        $('#chat2').load('GetAdminChat2.php')
                     }, 0);                    
                 });                            
             </script>        

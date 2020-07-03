@@ -118,8 +118,12 @@ text-decoration: none;
     color: purple;
     font-weight: bold;
     float: left;
+    height: 500px;
+    width: 30%;
+    overflow: scroll;
     margin-left: 30%;
 }
 #chat2{
     color: blue;
+    float: right;
 }
