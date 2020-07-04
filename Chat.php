@@ -9,10 +9,9 @@ date_default_timezone_set("Asia/Karachi");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/Chat.css">  
-    <link rel="stylesheet" href="style/Chat.css?v=<?php echo time(); ?>">  
-    <!-- <link rel="stylesheet" href="style/Login-Style.css">     -->
+    <title>24/7 Support</title>
+    <!-- <link rel="stylesheet" href="style/Chat.css">   -->
+    <link rel="stylesheet" href="style/Chat.css?v=<?php echo time(); ?>">      
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
         src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -29,15 +28,7 @@ date_default_timezone_set("Asia/Karachi");
     <!-- <link rel="stylesheet" href="Style.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
-    <style>        
-
-body{
-    background-image: url('Images/home-page.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-    </style>
+    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -52,15 +43,26 @@ body{
         </div>
       </nav>
       <br />
+<header>
 <div class="main-header">
     
             <h1>Chat-24/7</h1>
             <hr/>
             <h3>Welcome to The Tutor's Provider Student Fascilitation Center</h3>
-            <div id="chat">
+            <div class="container">
+            <div class="row">
+                <div class="col">
+                <div id="chat">
+                </div>
+                <div class="col">
+                <div id="chat2"></div>
+                </div>                
+            </div>
+            </div>
+            
                
             </div>
-            <div id="chat2"></div>
+            
             <form action="" method="post" enctype="multipart/form-data">       
             
             <textarea name="Std_Chat" cols="30" rows="10" placeholder="Type your message Here..!" required></textarea>
@@ -82,6 +84,7 @@ body{
             }
             ?>            
         </div>
+        </header>
         <script type="text/javascript">
                 $(document).ready(function(){                   
                     setInterval(function(){

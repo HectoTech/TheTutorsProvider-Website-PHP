@@ -18,17 +18,18 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 header{
-/* height: 100vh; */
-width: 100%;    
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-user-select: none;    
-}
+    /* height: 100vh; */
+    width: 50%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+    user-select: none;    
+    }
 .main-header{
 text-align: center;    
 transform: 1s;
+
 }
 .main-header:hover{
 -webkit-box-shadow: 6px -7px 51px 0px rgba(0,0,0,0.75);
@@ -104,26 +105,4 @@ text-decoration: none;
 }
 .main-header textarea:focus{
     border : 2px solid yellow;
-}
-
-.Show-chat{
-    height: 50%;
-    width: 500px;
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: yellowgreen;
-}
-#chat{
-    background-color: rgb(231, 245, 205);
-    color: purple;
-    font-weight: bold;
-    float: left;
-    height: 500px;
-    width: 30%;
-    overflow: scroll;
-    margin-left: 30%;
-}
-#chat2{
-    color: blue;
-    float: right;
 }

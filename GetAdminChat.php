@@ -5,7 +5,7 @@ if (isset($_SESSION['mychatid'])){
     $std = $_SESSION['mychatid'];    
     $result = $conn->query("SELECT * FROM chat where Sid = $std");
     if($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
+    while($row = $result->fetch_assoc()){        
         echo $row['Time'] . '<br />';
         echo $row['Message'] . '<br />';        
     }
