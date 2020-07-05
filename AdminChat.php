@@ -52,12 +52,15 @@ body{
         </div>
       </nav>
       <br />
+<header>
 <div class="main-header">
     
             <h1>Chat-24/7</h1>
             <hr/>
             <h3>Welcome to The Tutor's Provider Student Fascilitation Center</h3>
+            <p class="comments">Students Comments Starts Here</p>
             <div id="chat"></div>
+            <p class="comments">Owner Comments Starts Here</p>
             <div id="chat2"></div>
             <form action="" method="post" enctype="multipart/form-data">       
             
@@ -86,6 +89,7 @@ body{
             }
             ?>            
         </div>
+        </header>
         <script type="text/javascript">
                 $(document).ready(function(){                   
                     setInterval(function(){

@@ -50,11 +50,13 @@ date_default_timezone_set("Asia/Karachi");
             <hr/>
             <h3>Welcome to The Tutor's Provider Student Fascilitation Center</h3>
             <div class="container">
-            <div class="row">
+            <div class="row">            
                 <div class="col">
+                <p class="comments">Students Comments Starts Here</p>                    
                 <div id="chat">
                 </div>
                 <div class="col">
+                <p class="comments">Owner Comments Starts Here</p>
                 <div id="chat2"></div>
                 </div>                
             </div>

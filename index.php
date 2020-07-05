@@ -3,6 +3,7 @@
 session_start();
 include('Classes/Slider.php');
 include('Classes/AnnouncementClass.php');
+include('Classes/BlogClass.php');
 ?>
 <html lang="en">
 <head>
@@ -80,7 +81,7 @@ include('Classes/AnnouncementClass.php');
             if($SAddress == "" && $SContact == ""){
               echo"<a href='CompleteInfo.php' class='btn btn-warning'>Complete your information</a>";                    
                 }
-                echo"<a href='Chat.php?sid=$std_id' class='chat'><i class='fal fa-comment'></i></a>";
+                // echo"<a href='Chat.php?sid=$std_id' class='chat'><i class='fal fa-comment'></i></a>";
               }           
               
           ?>
@@ -100,9 +101,7 @@ include('Classes/AnnouncementClass.php');
             <li class="nav-item">
               <a class="nav-link" href="#tutor">Tutors</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#result">Results</a>
-            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" href="#news">News</a>
               </li>
@@ -170,6 +169,12 @@ include('Classes/AnnouncementClass.php');
     </div>
     </div>
     </div>
+    <?php
+      if($roles == "Student")
+      {
+        echo"<a href='Chat.php?sid=$std_id' class='chat'><i class='fal fa-comment'></i></a>";
+      }
+    ?>
     <div id="tutor">
     <nav class="navbar">
         <p><center class="heading">Top Tutors</center></p>
@@ -252,77 +257,19 @@ include('Classes/AnnouncementClass.php');
     </div>
     <a href="Announcement.php" class="btn btn-primary centered">See More</a>    
     </div>
-    <div id="result">
-    <nav class="navbar">
-      <p><center class="heading">Latest Academic Results</center></p>
-    </nav>
-
-    <div class="card-deck">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">10th Class Result 2020</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Those candidates anticipating for their 10th class results 2020 will receive their results on this page as soon as it is being officially announced by BISE Boards. We have organized an online gazette for 10th class students of all BISE Boards of Pakistan. The students would have to insert their roll number to get an online mark sheet in an instant.</p>
-          <a href="#" class="card-link">Result link</a>          
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">10th Class Result 2020</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Those candidates anticipating for their 10th class results 2020 will receive their results on this page as soon as it is being officially announced by BISE Boards. We have organized an online gazette for 10th class students of all BISE Boards of Pakistan. The students would have to insert their roll number to get an online mark sheet in an instant.</p>
-          <a href="#" class="card-link">Results link</a>          
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">10th Class Result 2020</h5>
-          <h6 class="card-subtitle mb-2 text-muted">25/12/2014 22:00PM</h6>
-          <p class="card-text">Those candidates anticipating for their 10th class results 2020 will receive their results on this page as soon as it is being officially announced by BISE Boards. We have organized an online gazette for 10th class students of all BISE Boards of Pakistan. The students would have to insert their roll number to get an online mark sheet in an instant.</p>
-          <a href="#" class="card-link">Results Link</a>          
-        </div>
-      </div>
-    </div>
-    <a href="" class="btn btn-primary centered">See More</a>    
-    </div>
+    
     <div id="blog">
     <nav class="navbar">
       <p><center class="heading">Blogs</center></p>
     </nav>
 
     <div class="card-deck">
-      <div class="card">
-        <img src="Images/Blogs/blog1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <img src="Images/Blogs/blog1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <img src="Images/Blogs/blog1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
+    <?php
+         $Blog = new Blog();
+         $Blog->RecoverBlog($Blog);
+      ?>
     </div>
-    <a href="" class="btn btn-primary centered">See More</a>    
+    <a href="Blog.php" class="btn btn-primary centered">See More</a>    
     </div>
     <script src="jquery.counterup.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>    
