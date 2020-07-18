@@ -12,17 +12,17 @@ class Announcement{
     public $ADetails;        
     public $ATime ;
     public $ALink;    
-    public function InsertSlider(Announcement $a){
+    public function InsertAnnouncement(Announcement $a){
         $now = new DateTime();
-        $a->ATIme = $now->format('Y-m-d H:i:s');    // MySQL datetime format
+        $time = $now->format('Y-m-d H:i:s');    // MySQL datetime format
         // echo $now->getTimestamp();    
         include('Includes/connection.php');                          
-        $query_insert_ann = "INSERT INTO announcements (ATitle,ADetails,ATime,ALink) VALUES('$a->ATitle , '$a->ADetails' , '$a->ATime' , '$a->ALink')";                    
+        $query_insert_ann = "INSERT INTO announcements (`ATitle`, `ADetails`, `ATime`, `ALink`) VALUES('$a->ATitle' , '$a->ADetails' , '$time' , '$a->ALink')";                    
         $is_inserted_ann = mysqli_query($conn,$query_insert_ann);        
         if($is_inserted_ann)
         {
             echo "<script>alert('Announcement Inserted Successfully')</script>";
-            // echo"  <script>window.location.href = 'Login.php'</script>"; 
+            echo"  <script>window.location.href = 'AdminHome.php'</script>"; 
         }
         else{
             echo "<script>alert('fill all fields Correctly')</script>";
@@ -40,7 +40,7 @@ class Announcement{
          $a->ALink = $rd['ALink'];     
             
            echo "<div class='card' style='width: 18rem;'>
-           <div class='card-body'>
+           <div class='card-body card-bodys'>
              <h5 class='card-title'>$a->ATitle</h5>
              <h6 class='card-subtitle mb-2 text-muted'>$a->ATime</h6>
              <p class='card-text'>$a->ADetails</p>
@@ -61,13 +61,14 @@ class Announcement{
          $a->ALink = $rd['ALink'];     
             
            echo "<div class='card' style='width: 18rem;'>
-           <div class='card-body'>
+           <div class='card-body card-bodys'>
              <h5 class='card-title'>$a->ATitle</h5>
              <h6 class='card-subtitle mb-2 text-muted'>$a->ATime</h6>
              <p class='card-text'>$a->ADetails</p>
              <a href='$a->ALink' class='card-link'>News link</a>          
            </div>
-         </div>";
+           </div>
+         ";
         }
     }
 

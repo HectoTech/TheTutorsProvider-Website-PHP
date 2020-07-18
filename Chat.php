@@ -30,7 +30,7 @@ date_default_timezone_set("Asia/Karachi");
     </script>
     
 </head>
-<body>
+<body style="background-image: url('Images/home-page.png');  background-repeat: no-repeat;   background-size: cover;">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">The Tutors Provider</a>
        

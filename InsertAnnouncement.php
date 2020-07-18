@@ -2,18 +2,19 @@
 <?php
 session_start();
 include('Includes/connection.php');   
-include('Classes/StudentChatClass.php');
 include('Classes/AdminRegisterClass.php');
+include('Classes/AnnouncementClass.php');
 ?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">    
-    <title>AdminChat</title>
+    <link rel="stylesheet" href="style/InsertAdminStyle.css">       
+    <title>Check All Tutors</title>
 </head>
 <body>
-<div class="main">
+
     <input type="checkbox" id="tick">  
     <!--header area start-->
     <div class="header">
@@ -72,24 +73,33 @@ include('Classes/AdminRegisterClass.php');
     <!--sidebar end-->
 
     <div class="content" style="background-image: url('Images/home.jpg');  background-repeat: no-repeat;   background-size: cover;">
-    <table class="content-table">
-        <thead>
-          <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Chat Button</th>            
-          </tr>
-        </thead>
-        <tbody>
-      
-        
-<?php
-    $chat = new Chat();
-    $chat->GetAllChat($chat);
-?>
-</tbody>
-      </table> 
+    <header>
+        <div class="main-header">
+            <h1>INSERT AN ANNOUNCEMENT</h1>
+            <hr/>
+            <h3>Welcome to The Tutor's Provider Admin Panel</h3>
+            <form action="InsertAnnouncement.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="Title"  placeholder="Write the Title of Announcement" required><br />
+            <textarea name="Details" cols="60" rows="5" placeholder="Details of Announcement" required></textarea>
+            <input type="text" name="Link"  placeholder="Social Media link of Announcement" required><br />                             
+            <input type="submit" class="btn btn-primary butt" name="Announcement" id="" value="Add Announcement">
+            <?php
+            $an = new Announcement();
+            if(isset($_POST['Announcement'])){   
+                
+                $an->ATitle = $_POST['Title'];                
+                $an->ADetails = $_POST['Details'];  
+                $an->ALink = $_POST['Link'];          
+                $an->InsertAnnouncement($an);
+            }
+            ?>
+            </form>           
+            <br />        
+   
+        </div>
+    </header>
     </div>
-  </div>
+
 
 </body>
 </html>

@@ -19,6 +19,7 @@ include('Classes/LoginClass.php');
         crossorigin="anonymous"></script>
     <title>Our Tutors</title>
     <link rel="stylesheet" href="style/Home.css">
+  
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

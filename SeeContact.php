@@ -2,15 +2,15 @@
 <?php
 session_start();
 include('Includes/connection.php');   
-include('Classes/StudentChatClass.php');
 include('Classes/AdminRegisterClass.php');
+include('Classes/ContactClass.php');
 ?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">    
-    <title>AdminChat</title>
+    <title>Check All Tutors</title>
 </head>
 <body>
 <div class="main">
@@ -75,16 +75,17 @@ include('Classes/AdminRegisterClass.php');
     <table class="content-table">
         <thead>
           <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Chat Button</th>            
+            <th scope="col">Person Name</th>
+            <th scope="col">Person Email</th>
+            <th scope="col">Person Message</th>
+            <th scope="col">Delete Contact</th>         
           </tr>
         </thead>
         <tbody>
-      
-        
+
 <?php
-    $chat = new Chat();
-    $chat->GetAllChat($chat);
+    $contact = new EmailSend();
+    $contact->GetAllContacts($contact);
 ?>
 </tbody>
       </table> 

@@ -52,28 +52,31 @@ session_start();
             ?>     
           <ul class="navbar-nav ml-auto">            
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   About
                 </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="AboutOwner.html">The CEO</a>
-                  <a class="dropdown-item" href="AboutComp.html">The Tutors Providers</a>                
+                  <a class="dropdown-item" href="AboutOwner.php">The CEO</a>
+                  <a class="dropdown-item" href="AboutComp.php">The Tutors Providers</a>                
               </div>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tutors</a>
-            </li>
+              <a class="nav-link" href="index.php#tutor">Tutors</a>
+            </li>  
             <li class="nav-item">
-              <a class="nav-link" href="#">Results</a>
-            </li>
+                <a class="nav-link" href="index.php#story">Success Stories</a>
+              </li>         
+            <li class="nav-item">
+                <a class="nav-link" href="index.php#blog">Blogs</a>
+              </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">News</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="Contact.php">Contact</a>
             </li>            
           </ul>
         </div>
@@ -103,7 +106,7 @@ session_start();
              if(isset($_POST['Send'])){
                 $em = new EmailSend();
                 $em->Name = $_POST['Name'];
-                $em->Subject = $_POST['Email'];
+                $em->email = $_POST['Email'];
                 $em->Body = $_POST['Body'];                
                 $em->SendEmail($em);
              }

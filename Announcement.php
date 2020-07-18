@@ -20,6 +20,41 @@ include('Classes/AnnouncementClass.php');
         crossorigin="anonymous"></script>
     <title>Our Tutors</title>
     <link rel="stylesheet" href="style/Home.css">
+    <style>
+    .card-body{
+    height: 400px;
+    overflow: scroll !important;
+    
+}
+.card {display:inline-block;
+  margin-left : 10%;
+  margin-bottom : 5%;
+}
+.mycard{
+  /* padding : 20px; */
+  
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  opacity:0.1;
+  /* background: red; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,11 +72,13 @@ include('Classes/AnnouncementClass.php');
       <nav class="navbar">
         <p><center class="heading">Latest Announcement and Study Plans</center></p>
     </nav>  
-    <div class='card-deck'>  
+    <div class='mycard'>  
+    <!-- <div class='card' style='width: 18rem;'> -->
     <?php
          $Announcements = new Announcement();
          $Announcements->RecoverAnnouncementAll($Announcements);
       ?>
-    </div>
+      </div>
+    <!-- </div> -->
 </body>
 </html>

@@ -172,4 +172,31 @@ html{
   flex-direction : row;
   justify-content : space-between;
 }
+.colors{
+    background-color: #BA55D3;
+}
    
+.cent{
+    align-items: center;    
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    opacity:0.1;
+    /* background: red; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -41,6 +41,33 @@ class StudentRegister{
             echo "<script>alert('fill all fields Correctly')</script>";
         }          
     }
+    public function GetAllStudents(StudentRegister $s){
+        include('Includes/connection.php');                          
+        $query_std = "SELECT * FROM studentreg";                    
+        $is_get_std = mysqli_query($conn,$query_std);                
+        while($rd5 = mysqli_fetch_array($is_get_std))
+        {                         
+            $s->sid =  $rd5["Sid"];                       
+            $s->Sname = $rd5["SName"];        
+            $s->Saddress = $rd5["SAddress"];
+            $s->Scontact = $rd5["SContact"]; 
+            $s->Semail = $rd5["SEmail"];                                
+            $s->Sclass = $rd5["SClass"];
+            $s->Scollege = $rd5["SCollege"];                        
+            echo"
+            <tr>            
+            <td>$s->sid</td>
+            <td>$s->Sname</td>
+            <td>$s->Saddress</td>
+            <td>$s->Scontact</td>
+            <td>$s->Semail</td>
+            <td>$s->Sclass</td>
+            <td>$s->Scollege</td>            
+            <td><a href='Delete.php?sid=$s->sid' style='margin-top:10px;' class='logout'>Delete</a></td>                                    
+          </tr>
+            ";
+        }          
+    }   
 }
 
 

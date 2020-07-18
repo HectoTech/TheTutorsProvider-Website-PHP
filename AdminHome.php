@@ -1,31 +1,78 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include('Classes/AdminRegisterClass.php');
+?>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/Chat.css">  
-    <link rel="stylesheet" href="style/Chat.css?v=<?php echo time(); ?>">  
-    <!-- <link rel="stylesheet" href="style/Login-Style.css">     -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-        crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script type="text.javascript" src="Jquery.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="Style.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-    <title>AdminHome</title>
+<meta charset="utf-8">
+    <title>Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
-    <a href="AdminChatControl.php">Chat Control</a>
+         
+<div class="main">
+    <input type="checkbox" id="tick">  
+    <!--header area start-->
+    <div class="header">
+      <label for="tick">
+        <i class="fas fa-bars" id="sidebar_Button"></i>
+      </label>
+      <div class="left">
+        <h3>The Tutors <span>Provider</span></h3>
+      </div>
+      <div class="right">        
+        <?php    
+    $roles = "";    
+    $email = "";
+    if(!isset($_SESSION["role"]))
+    {
+        echo"<a href='login.php' class='logout'>Login/Register</a>";
+    }
+    // elseif(!isset($_SESSION["role"])){
+    //     echo"<a href='login.php' class='btn btn-primary'>Login/Register</a>";
+    //     }
+    else{
+        echo"<a href='Logout.php' class='logout'>Logout</a>";                  
+        $roles = $_SESSION["role"];  
+        $email = $_SESSION["Admin"];
+    }
+?>   
+      </div>
+    </div>
+    
+   
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">      
+      <center>
+      <?php
+            $image = new Admin();
+            $image->AEmail = $email;
+            $image->GetAdminImage($image);
+        ?>    
+        <?php
+            $name = new Admin();
+            $name->AEmail = $email;
+            $name->GetAdminName($name);
+        ?>        
+      </center>
+      <a href="AdminHome.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="SeeAllTutors.php"><i class="fas fa-chalkboard-teacher"></i><span>See All Tutors</span></a>
+      <a href="SeeContact.php"><i class="far fa-id-card"></i><span>Check Contact</span></a>
+      <a href="AdminChatControl.php"><i class="fas fa-sms"></i><span>Chat Control</span></a>  
+      <a href="SeeAllStudents.php"><i class="fas fa-user-graduate"></i><span>See All Students</span></a>
+      <a href="InsertAnnouncement.php"><i class="fas fa-bullhorn"></i><span>Insert Announcement</span></a>  
+      <a href="InsertBlog.php"><i class="fab fa-blogger-b"></i><span>Insert Blogs</span></a>  
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Insert Slider</span></a>  
+      <a href="#"><i class="fas fa-users-cog"></i><span>Insert Admin</span></a>     
+    </div>
+    <!--sidebar end-->
+
+    <div class="content" style="background-image: url('Images/home.jpg');  background-repeat: no-repeat;   background-size: cover;">
+      
+    </div>
+  </div>
 </body>
 </html>

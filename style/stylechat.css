@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #22242A;
+  }
+  
+  .header{   /*header tag*/
+    position: absolute;
+    background: #22242A;
+    padding: 20px;
+    width: 97%;
+    height: 30px;
+  }
+  
+  .left h3{    /*main heading*/
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  
+  .left span{     /* heading span*/
+    color: #19B3D3;
+  }
+  
+  .logout{
+    padding: 5px;
+    background: #19B3D3;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+  }
+  
+  .logout:hover{
+    background: #0B87A6;
+  }
+  
+  .sidebar {   /* sidebar div*/
+    background: #2f323a;
+    margin-top: 40px;
+    padding-top: 30px;
+    position: absolute;
+    left: 0;
+    width: 250px;
+    height: 1000px;  
+    transition: 0.5s;
+    transition-property: left;
+  }
+  
+  .sidebar .profile{   /*profile image*/
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+  }
+  
+  .sidebar h3{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar a{  /*sidebar links*/
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;    
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+  }
+  
+  .sidebar a:hover{
+    background: #19B3D3;
+  }
+  
+  .sidebar i{
+    padding-right: 15px;
+  }
+  
+  label #sidebar_Button{
+    z-index: 1;
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+    left: 350px;
+    font-size: 20px;
+    /* margin: 8px 0; */
+    margin-top: -15px;
+    transition: 0.5s;  /* hiding transition when reload*/
+    transition-property: color;
+  }
+  
+  label #sidebar_Button:hover{
+    color: yellow;
+  }
+  
+  #tick:checked ~ .sidebar{   /*the checked class reperesnt a radio button*/
+    left: -190px;
+  }
+  
+  #tick:checked ~ .sidebar a span{
+    display: none;
+  }
+  #tick:checked ~ .sidebar h3{
+    display: none;
+  }
+  #tick:checked ~ .sidebar a{
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
+  }
+  
+  .content{
+    margin-left: 250px;
+    background: url(../Images/home.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1050px;
+    /* height: 100%; */
+    padding:100px;
+    overflow: scroll;
+    /* width: 100%; */
+    /* margin-top: 0; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    transition: 0.5s;  
+    /* width: auto; */  
+    /* width: 100%; */
+  }
+  /* .main{
+    display: flex;
+    flex-direction: row;
+    display: b;
+    
+  } */
+  #tick:checked ~ .content{
+    margin-left: 60px;
+  }
+  
+  #tick{
+    display: none;
+  }
+.card-deck{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

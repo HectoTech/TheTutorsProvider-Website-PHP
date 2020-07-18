@@ -47,7 +47,7 @@ body{
           <span class="navbar-toggler-icon"></span>
         </button>        
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <a href="index.php" class="btn btn-info">Back To Home</a>
+            <a href="AdminHome.php" class="btn btn-info">Back To Home</a>
           
         </div>
       </nav>

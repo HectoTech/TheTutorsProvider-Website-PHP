@@ -2,18 +2,25 @@
 <?php
 session_start();
 include('Includes/connection.php');   
-include('Classes/StudentChatClass.php');
 include('Classes/AdminRegisterClass.php');
+include('Classes/BlogClass.php');
 ?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">    
-    <title>AdminChat</title>
+    <link rel="stylesheet" href="style/InsertAdminStyle.css">       
+    <title>Check All Tutors</title>
+    <style>
+       .lab{
+  color: white;
+  
+}
+    </style>
 </head>
 <body>
-<div class="main">
+
     <input type="checkbox" id="tick">  
     <!--header area start-->
     <div class="header">
@@ -72,24 +79,41 @@ include('Classes/AdminRegisterClass.php');
     <!--sidebar end-->
 
     <div class="content" style="background-image: url('Images/home.jpg');  background-repeat: no-repeat;   background-size: cover;">
-    <table class="content-table">
-        <thead>
-          <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Chat Button</th>            
-          </tr>
-        </thead>
-        <tbody>
-      
-        
-<?php
-    $chat = new Chat();
-    $chat->GetAllChat($chat);
-?>
-</tbody>
-      </table> 
+    <header>
+        <div class="main-header">
+            <h1>INSERT A BLOG</h1>
+            <hr/>
+            <h3>Welcome to The Tutor's Provider Admin Panel</h3>
+            <form action="InsertBlog.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="Title"  placeholder="Write the Title of Announcement" required><br />
+            <label for="img" class="lab">Blog Attractive Photo</label>
+            <input type="file" name="Image" id="img" required><br />                             
+            <textarea name="Details" cols="60" rows="5" placeholder="Details of Announcement" required></textarea>            
+            <input type="submit" class="btn btn-primary butt" name="Blog" id="" value="Add Blog">
+            <?php
+            $blog = new Blog();
+            if(isset($_POST['Blog'])){   
+                
+                $blog->BTitle = $_POST['Title'];                
+                $blog->BDescription = $_POST['Details'];  
+                $Photo = $_FILES["Image"]["name"];
+                $Photo_temp = $_FILES["Image"]['tmp_name'];
+                $info = pathinfo($Photo);                
+                $ext = $info['extension']; // get the extension of the file
+                $newname =  $blog->BTitle.  '.'  .$ext; 
+                $target = "Images/Blogs/".$newname;
+                $blog->BImage = $target;                
+                move_uploaded_file( $Photo_temp, $target);                 
+                $blog->InsertBlog($blog);
+            }
+            ?>
+            </form>           
+            <br />        
+   
+        </div>
+    </header>
     </div>
-  </div>
+
 
 </body>
 </html>

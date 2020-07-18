@@ -53,7 +53,8 @@ if(isset($_GET["tid"]))
             $Demo = $rd5["TDemo"];
             $Mode = $rd5["Mode"];            
             $City = $rd5["City"];            
-            $Name = $rd5["TName"];                                
+            // $Name = $rd5["TName"];                                
+            $code = $rd5["TCode"];            
             $Photo = $rd5["TPhoto"];     
             $Address = $rd5["TAddress"];
             $Contact = $rd5["TContact"];  
@@ -77,7 +78,7 @@ if(isset($_GET["tid"]))
                     </div>
                 </div>
                 <div class='col-sm-7'>
-                    <h1 class='text-center'>$Name</h1>
+                    <h1 class='text-center'>$code</h1>
                     <label>Mode of Teaching</label>
                     <p class='card-text text-info'>$Mode</p>
                     <label>Subjects Offered</label>

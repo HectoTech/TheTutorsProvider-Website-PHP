@@ -21,13 +21,15 @@ class TutorRegister{
     public $experience;
     public $Attract_statement;        
     public $university;
+    public $TCode;
 
     public function SignUp_Tut(TutorRegister $T){
         include('Includes/connection.php'); 
         // global $conn;         
-        $a = rand(10,10000); 
-        $name_new = $T->Tname . 'TP#' .$a;        
-        $query = "INSERT INTO tutorreg (TName,TEmail,TPass,role) VALUES('$name_new' , '$T->Temail' , '$T->Tpass'  ,'$T->Trole' )";                    
+        $a = rand(10,100000); 
+        $b = rand(10,10000); 
+        $name_code = 'TP#' .$a . $b;        
+        $query = "INSERT INTO tutorreg (TName,TCode,TEmail,TPass,role) VALUES('$T->Tname' ,'$name_code', '$T->Temail' , '$T->Tpass'  ,'$T->Trole' )";                    
         $query1 = "INSERT INTO login (Email,Pass,role) VALUES('$T->Temail' , '$T->Tpass' , '$T->Trole')";                    
         $is_inserted_login = mysqli_query($conn,$query1);
         $is_inserted = mysqli_query($conn,$query);
@@ -53,9 +55,52 @@ class TutorRegister{
         }
         else{
             echo "<script>alert('fill all fields Correctly')</script>";
-        }          
+        }    
+           
     }
+    public function GetAllTutors(TutorRegister $t){
+        include('Includes/connection.php');                          
+        $query_tutor = "SELECT * FROM tutorreg";                    
+        $is_get_tutor = mysqli_query($conn,$query_tutor);                
+        while($rd5 = mysqli_fetch_array($is_get_tutor))
+        {                         
+            $t->tid =  $rd5["Tid"];                       
+            $t->Name = $rd5["TName"];        
+            $t->Address = $rd5["TAddress"];
+            $t->Contact = $rd5["TContact"]; 
+            $t->Cv = $rd5["TCV"];                                
+            $t->Photo = $rd5["TPhoto"];
+            $t->code = $rd5["TCode"];
+            $t->Demo = $rd5["TDemo"];
+            $t->Mode = $rd5["Mode"];            
+            $t->Cnic = $rd5["TCnic"];  
+            $t->City = $rd5["City"];                                
+            $t->experience = $rd5["Experience"];  
+            $t->University = $rd5["University"];  
+            $t->Subject = $rd5["Subjects"];                 
+            echo"
+            <tr>            
+            <td>$t->tid</td>
+            <td >$t->Name</td>
+            <td>$t->Address</td>
+            <td>$t->Contact</td>
+            <td>$t->code</td>
+            <td>$t->Mode</td>
+            <td>$t->City</td>
+            <td>$t->experience</td>
+            <td>$t->University</td>
+            <td>$t->Subject</td>
+            <td><a href='DownloadDemo.php?tdemo=$t->Demo' class='logout'>Download</a></td>
+            <td><a href='DownloadCV.php?tcv=$t->Cv' class='logout'>Download</a></td>
+            <td><a href='DownloadCnic.php?tcnic=$t->Cnic' class='logout'>Download</a></td>
+            <td><a href='Delete.php?tid=$t->tid' class='logout'>Delete</a></td>                        
+            <td><img src=$t->Photo class='profile' width=50 height=50 /></td>            
+          </tr>
+            ";
+        }          
+    }   
 }
 
 
 ?>
+

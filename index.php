@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include('Classes/Slider.php');
 include('Classes/AnnouncementClass.php');
 include('Classes/BlogClass.php');
 ?>
@@ -22,6 +21,13 @@ include('Classes/BlogClass.php');
     <title>The Tutors Provider</title>
     <link rel="stylesheet" href="style/Home.css?v=<?php echo time(); ?>">
     <!-- <link rel="stylesheet" type="text/css" href="style/Home.css"> -->   
+    <style>
+
+.card-bodys{
+    height: 350px;
+    overflow: scroll !important;
+} 
+    </style>
 </head>
 <body style=" background-image: url('Images/home-page.png');  background-repeat: no-repeat;   background-size: cover;">
     <nav class="navbar">
@@ -119,27 +125,27 @@ include('Classes/BlogClass.php');
       </nav>      
       <a href="" class="upbtn"><i class="fas fa-arrow-up"></i></a>
       
-      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>        
-        <div class="carousel-inner">          
-        <?php
-        $slide = new Slider();
-        $slide->RecoverSlider($slide);
-        ?>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Images\Slider\Advertisement for online classes.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="Images\Slider\slide1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="Images\Slider\slide3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
       <div id="story">
       <nav class="navbar">
         <p><center class="heading">Success Stories</center></p>
@@ -188,7 +194,7 @@ include('Classes/BlogClass.php');
          while($rd5 = mysqli_fetch_array($run_query5))
          {          
           $tid =  $rd5["Tid"];                       
-          $Name = $rd5["TName"];        
+          $Name_Code = $rd5["TCode"];        
           $Address = $rd5["TAddress"];
           $Contact = $rd5["TContact"];                    
           $Photo = $rd5["TPhoto"];
@@ -200,7 +206,7 @@ include('Classes/BlogClass.php');
             <div class='card'>        
             <img src=$Photo class='card-img-top'>    
             <div class='card-body'>
-              <h5 class='card-title'>$Name</h5>            
+              <h5 class='card-title'>$Name_Code</h5>            
             </div>
             <div class='card-footer'>                                     
             <a href='Details.php?tid=$tid' class='btn btn-info'>Details</a><br /><br />           
@@ -213,7 +219,7 @@ include('Classes/BlogClass.php');
             <div class='card'>            
               <img src=$Photo class='card-img-top'>            
               <div class='card-body'>
-                <h5 class='card-title'>$Name</h5>            
+                <h5 class='card-title'>$Name_Code</h5>            
               </div>
               <div class='card-footer'>                                                      
               <a href='Details.php?tid=$tid' class='btn btn-success'>Details</a><br /><br />
@@ -230,7 +236,7 @@ include('Classes/BlogClass.php');
             <img src=$Photo class='card-img-top'>
             
             <div class='card-body'>
-              <h5 class='card-title'>$Name</h5>            
+              <h5 class='card-title'>$Name_Code</h5>            
             </div>
             <div class='card-footer'>                                
             <a href='Details.php?tid=$tid' class='btn btn-info'>Details</a><br /><br />
@@ -256,8 +262,7 @@ include('Classes/BlogClass.php');
       ?>
     </div>
     <a href="Announcement.php" class="btn btn-primary centered">See More</a>    
-    </div>
-    
+    </div>        
     <div id="blog">
     <nav class="navbar">
       <p><center class="heading">Blogs</center></p>
@@ -280,6 +285,10 @@ include('Classes/BlogClass.php');
             time: 1000
             });
         });
-    </script>      
+    </script>   
+    <br />
+    <!-- Footer -->
+
+<!-- Footer -->   
 </body>
 </html>

@@ -2,15 +2,15 @@
 <?php
 session_start();
 include('Includes/connection.php');   
-include('Classes/StudentChatClass.php');
 include('Classes/AdminRegisterClass.php');
+include('Classes/TutorRegistrationCLass.php');
 ?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">    
-    <title>AdminChat</title>
+    <title>Check All Tutors</title>
 </head>
 <body>
 <div class="main">
@@ -75,16 +75,28 @@ include('Classes/AdminRegisterClass.php');
     <table class="content-table">
         <thead>
           <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Chat Button</th>            
+            <th scope="col">Teacher ID</th>
+            <th scope="col">Teacher Name</th>
+            <th scope="col">Teacher Address</th>
+            <th scope="col">Teacher Contact</th>
+            <th scope="col">Teacher Code</th>
+            <th scope="col">Mode of Teaching</th>
+            <th scope="col">Teacher City</th>
+            <th scope="col">Teacher Experience</th>
+            <th scope="col">Teacher University</th>
+            <th scope="col">Teacher Subjects Teaching</th>
+            <th scope="col">Demo Lecture</th>
+            <th scope="col">Resume</th>
+            <th scope="col">Cnic</th>
+            <th scope="col">Delete Tutor</th>
+            <th scope="col">Photo</th>
           </tr>
         </thead>
         <tbody>
-      
-        
+
 <?php
-    $chat = new Chat();
-    $chat->GetAllChat($chat);
+    $teacher = new TutorRegister();
+    $teacher->GetAllTutors($teacher);
 ?>
 </tbody>
       </table> 
